@@ -2,7 +2,7 @@
 - **RProtocol** is an API that provides communication between the server and client and flexible pipeline control for the network of your choice.
 
 ## 🌳 Features
-- **Packet Registration**
+- ### Packet Registration
  
   - Packet Register:
   ```java
@@ -16,3 +16,6 @@
   ```java
   Packets.unregister(1);
   ```
+- **Packet Subscription:**
+  
+  -   
