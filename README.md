@@ -28,3 +28,30 @@
   ```
   And many more.
   
+- ### Pipeline Management:
+
+  ```java
+  PipelineFactory<SocketChannel> pipelineFactory = () -> {
+            return new ChannelInitializer<SocketChannel>() {
+                @Override
+                protected void initChannel(SocketChannel socketChannel) throws Exception {
+                    ChannelPipeline pipeline = socketChannel.pipeline();
+                    
+                    pipeline.addLast(new ChannelReader(){
+                        @Override
+                        public void channelActive(ChannelHandlerContext ctx) throws Exception {
+                            //logic
+                        }
+
+                        @Override
+                        public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+                            //logic
+                        }
+                    });
+                    
+                    pipeline.addLast(new PacketEncoder());
+                    pipeline.addLast(new PacketDecoder());
+                }
+            };
+        };
+  ```
