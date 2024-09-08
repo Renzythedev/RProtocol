@@ -5,12 +5,10 @@
 - **Packet Registration**
  
   - Packet Register:
-   
   ```java
   Packets.register(1,TestPacket.class);
   ```
   - Packet Unregister:
-    
   ```java
   Packets.unregister(TestPacket.class);
   ```
