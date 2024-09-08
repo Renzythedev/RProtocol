@@ -4,11 +4,11 @@
 ## 🌳 Features
 - ### Packet Registration
  
-  - Packet Register:
+  Packet Register:
   ```java
   Packets.register(1,TestPacket.class);
   ```
-  - Packet Unregister:
+  Packet Unregister:
   ```java
   Packets.unregister(TestPacket.class);
   ```
@@ -16,6 +16,15 @@
   ```java
   Packets.unregister(1);
   ```
-- **Packet Subscription:**
+- ### Packet Subscription:
   
-  -   
+  With subscription, you can monitor the registered packets and trigger desired actions whenever a tracked packet arrives.
+  ```java
+  Packets.subscribe(TestPacket.class).handler(packet -> System.out.println(packet.getMessage()));
+  ```   
+  You can filter subscriptions.
+  ```java
+  Packets.subscribe(TestPacket.class).filter((subscription, packet) -> "Hello world".equals(packet.getMessage())).handler(packet -> System.out.println(packet.getMessage()));
+  ```
+  And many more.
+  
