@@ -6,4 +6,4 @@
  
   - Packet Register:
    
-  ``java Packets.register(1,TestPacket.class);``
+  ```java Packets.register(1,TestPacket.class);```
