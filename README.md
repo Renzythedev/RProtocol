@@ -25,8 +25,8 @@
   You can filter subscriptions.
   ```java
   Packets.subscribe(TestPacket.class)
-  .filter((subscription, packet) -> "Hello world".equals(packet.getMessage()))
-  .handler(packet -> System.out.println(packet.getMessage()));
+   .filter((subscription, packet) -> "Hello world".equals(packet.getMessage()))
+   .handler(packet -> System.out.println(packet.getMessage()));
   ```
   And many more.
   
