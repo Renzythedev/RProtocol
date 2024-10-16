@@ -20,5 +20,6 @@ public final class PacketDecoder extends ByteToMessageDecoder {
 
         Packet packet = packetClass.getConstructor().newInstance();
         packet.read(deserializer);
+        list.add(packet);
     }
 }
